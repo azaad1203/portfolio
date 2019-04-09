@@ -1,3 +1,7 @@
+BloomTracker is a tool designed for professional beekeepers to help make their lives a bit easier by allowing you to search for areas in Victoria that currently have trees in bloom! Simply input the time of year you wish to see, and the location you wish to go, and this website will give you an estimate of how likely it is that there will be flowers blooming. The aim is to make it easier for you to plan out when to move your hives in advance, in order to have happy and healthier bees!
+At this moment, used model is limited to the Grey Box Eucalyptus species. There will be additional species to the model in future. I will also be adding in a visible map to make it easier to view where current blossom sites are.
+                    
+
 index.html - home page of the website
 about.html - about us page
 yellowbox folder - has yellowbox.html page, 
