@@ -1,0 +1,49 @@
+
+ul {
+	font-family:Copperplate Gothic Bold;
+	font-size: 24px;
+	margin-bottom: 20px;
+	float: left;
+	margin-left:35px;	
+}
+ul li { 
+	list-style: none; 
+	position:relative;
+	display:inline;
+	height:44px;
+	margin-left:5px;
+}
+#nav li a { 
+	width: 100px; 
+	height: 40px; 
+	line-height: 53px; 
+	color: #333;
+	text-decoration: none;
+	border-bottom: 4px solid white;  
+	padding-left: 5px; 
+ 	-webkit-transition: .2s all linear;
+	-moz-transition: .2s all linear;
+	-o-transition: .2s all linear;
+	transition: .2s all linear;
+}
+#nav li:nth-child(1) a:hover { 
+	border-color: #636393;
+	background-color:#D0D0DF;	
+}
+
+#nav li:nth-child(2) a:hover { 
+	border-color: #B5222D;
+	background-color:#E9BDC0;
+}
+#nav li:nth-child(3) a:hover { 
+	border-color: #609491;
+	background-color:#CFDFDE;
+}
+#nav li:nth-child(4) a:hover { 
+	border-color:#D4953C;
+	background-color:#F2DFC4;
+}
+#nav li:nth-child(5) a:hover { 
+	border-color: #87A248;
+	background-color:#DBE3C8;
+}
