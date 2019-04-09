@@ -1,0 +1,432 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>BloomTracker</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/full.css" rel="stylesheet">
+    <script type="text/javascript" src="https://storage.googleapis.com/ie-2018-217501.appspot.com/bower_components/chartist/dist/chartist.min.js"></script>
+    <script type="text/javascript" src="https://storage.googleapis.com/ie-2018-217501.appspot.com/bower_components/chart.js/dist/Chart.min.js"></script>
+    <script type="text/javascript" src="https://storage.googleapis.com/ie-2018-217501.appspot.com/bower_components/chart.js/dist/Chart.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://storage.googleapis.com/ie-2018-217501.appspot.com/bower_components/chartist/dist/chartist.min.css">
+    <script type="text/javascript" src="js/yb3.js"></script>
+
+    <!-- files for tab -->
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,700'>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- tooltip -->
+    <link rel="stylesheet" type="text/css" href="css/balloon.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet"><!-- font Jura-->
+    <!-- read db-->
+    
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        /* map stylesheet
+                 Always set the map height explicitly to define the size of the div
+        * element that contains the map. */
+        #map {
+            height: 400px;
+            width: auto;
+            margin-left: 30px;
+            margin-right: 50px;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin-left: 0px;
+            padding: 0;
+        }
+        /* charset code */
+        .chartsContainer {
+            position: relative;
+            min-width: 250px;
+            max-width: 1200px;
+            min-height: 10px;
+            max-height: 600px;
+            margin-left: 30px;
+        }
+
+        .chrt {
+            height: 10px;
+        }
+
+        .copyright {
+            position: relative;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            margin-top: 2em;
+            padding-top: 2em;
+            margin-left: 15px;
+        }
+
+            .copyright p {
+                font-size: 15px;
+                letter-spacing: .5px;
+                text-transform: capitalize;
+                margin-left: 100px;
+                color: white;
+            }
+
+                .copyright p a {
+                    color: #5ad2d4;
+                    text-decoration: underline;
+                }
+
+                    .copyright p a:hover {
+                        color: #fff;
+                    }
+    </style>
+
+
+    <style type="text/css">
+
+        .mainpage {
+            margin-top: 50px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            background-attachment: fixed;
+            position: center;
+            height: auto;
+            width: auto;
+        }
+
+        .top {
+            position: absolute;
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0PX;
+            padding-right: 0px;
+            min-height: 700px;
+            /*height:auto;*/
+            height: auto;
+            width: 100%;
+            background-color: white;
+        }
+
+        .title {
+            position: absolute;
+            margin-top: -50px;
+            height: 50px;
+            width: 100%;
+            box-shadow: yellow 5px 5px inherit;
+            background-color: white;
+        }
+
+            .title p {
+                font-size: 30px;
+                color: black;
+                text-align: center;
+                text-shadow: 2px 2px 8px black;
+                padding-top:15px;
+            }
+
+        .footr {
+            position: fixed;
+            margin-bottom: 0px;
+            bottom: 0px;
+            background-color: #404040;
+            height: 80px;
+            width: 100%;
+        }
+
+        .month {
+            position: absolute;
+            padding-left: 50px;
+            margin-top: 50px;
+            height: auto;
+            background-color: white;
+            margin-bottom: 100px;
+            width:100%;
+        }
+
+        .button {
+            padding-right: ;
+            margin-left: 0px;
+        }
+
+        .information {
+            padding-top: 20px;
+            padding-left: 50px;
+            height: auto;
+        }
+
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th td {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .pie {
+            height: 500px;
+            width: 1000px;
+        }
+
+        .isDisabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+            .isDisabled > a {
+                color: currentColor;
+                display: inline-block; /* For IE11/ MS Edge bug */
+                pointer-events: none;
+                text-decoration: none;
+            }
+
+        hr.style14 {
+            border: 0;
+            height: 1px;
+            background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+            background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+            background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+            background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+        }
+
+        .flowerSelec a {
+            text-decoration: none;
+        }
+
+        .flowerSelec img:hover {
+            -moz-box-shadow: 2px 2px 5px #ff0000;
+            -webkit-box-shadow: 2px 2px 5px #ff0000;
+            box-shadow: 2px 2px 5px #ff0000;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+        }
+
+        .fontnw {
+        }
+        ul li {
+            padding: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="../index.html" style="font-size:50px; ">BloomTracker</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto fontnw" style="float:right;">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../index.html">
+                            Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#top5">Top 5 Site</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../wax/waxmoth.html">Wax Moth</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html">About Us</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Predictions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Other</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Content -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- edited section start -->
+    <div class="mainpage">
+        <!-- tag for main page div tag-->
+
+        <div class=" top">
+            <!-- div for holding data output -->
+
+            <div class="title">
+                <!-- div for header / title-->
+
+                <p> Search Yellow Box by Month & Location </p>
+                <hr class="style14" />
+            </div><!-- // title section -->
+
+            <div class="month">
+                <div style="overflow-x:auto;" class="flowerSelec ">
+                    <table class="table " style="">
+                        <thead>
+                            <tr style="border:none">
+                                <th style="border:none"><a href="../month/RedGum.html">Red Gum &nbsp; <img title="Red Gum" src="../images/red.png" alt="flower" height="100px" width="100px" /></a></th><!-- use hidden to hide it-->
+                                <th style="border:none"><a href="../location/YellowGum.html">Yellow Gum &nbsp; <img title="Yellow Gum" src="../images/yellow.png" alt="flower" height="100px" width="100px" /></a></th>
+                                <th style="border:none"><a href="../monloc/GreyBox.html">Grey Box &nbsp; <img title="Grey Box" src="../images/grey.png" alt="flower" height="100px" width="100px" /></a></th>
+                                <th style="border:none"><a href="../yellowbox/yellowbox.html" class="isDisabled" data-balloon="Current flower page" data-balloon-pos="right">Yellow Box&nbsp;<img title="Yellow Box" src="../images/yellowbox.png" alt="flower" height="100px" width="100px" /></a></th>
+                                <th style="border:none"><a href="../messmate/messmate.html">Messmate &nbsp; <img title="Messmate" src="../images/mess.png" alt="flower" height="100px" width="100px" /></a></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div><!-- div for table-->
+                <!-- onchange="storeSelction() -->
+                <p class="fontnw" style="font-weight:bold">Select Month and Location for 2019 to see report, probability in charts. Selection of each location and month generates report. Selection of all location or month with each location or month generates chart.</p>
+                <div class="button">
+                    <!-- flower selection -->
+                    <!--<div style="overflow-x:auto;">-->
+                    <table class="fontnw" style="font-weight:bold; border:none">
+                        <tr>
+                            <td style="width:40%; border:none">
+                                <p>
+                                    In <select id="chooseLocation" onchange="events(),initMap()" style="width:130px;">
+                                        <option selected disabled>Location</option>
+                                        <option value="allL">All Locations</option>
+                                        <option value="90171">Cashmore</option>
+                                        <option value="90194">Dartmoor</option>
+                                        <option value="86375">Cranbourne</option>
+                                        <option value="86338">Olympic Park</option>
+                                        <option value="83083">Eddi Upper</option>
+                                        <option value="84145">Orbost</option>
+                                        <option value="90176">Mortlake</option>
+                                        <option value="83024">Mount Buller</option>
+                                        <option value="80128">Charlton</option>
+                                        <option value="76064">Walpeup</option>
+                                        <option value="79028">Longerenong</option>
+                                    </select> for
+                                    <select id="chooseMonth" onchange="events()" style="width:130px;">
+                                        <option selected disabled>Month</option>
+                                        <option value="allM">All Months</option>
+                                        <option value="1">January</option>
+                                        <option value="2">February</option>
+                                        <option value="3">March</option>
+                                        <option value="4">April</option>
+                                        <option value="5">May</option>
+                                        <option value="6">June</option>
+                                        <option value="7">July</option>
+                                        <option value="8">August</option>
+                                        <option value="9">September</option>
+                                        <option value="10">October</option>
+                                        <option value="11">November</option>
+                                        <option value="12">December</option>
+                                    </select> the probability of blossom is:
+                                </p>
+                            </td>
+                            <td style="border:none; width:auto">
+                                <p hidden id="results"></p>                                 
+                                <p id="results3"></p>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div><!-- button div -->
+
+
+                <div class="chartsContainer">
+                    <canvas class="chrt" id="charts"></canvas>
+                </div>
+
+                <hr />
+                <div id="map"></div>
+                <script type="text/javascript" src="js/Map3.js"></script>
+
+            </div><!-- // content div -->
+
+
+        </div><!-- // top div-->
+    </div><!-- main -->
+    <div class="footr">
+        <div class="copyright">
+            <p>© 2018 BloomTracker. All Rights Reserved | Design by LionsByte Monash 2018 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Last updated on: 30/09/18</p>
+        </div>
+    </div>
+    <!-- links for tab -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/chartist/0.9.7/chartist.min.js'></script>
+    <script src=' https://cdnjs.cloudflare.com/ajax/libs/chartist/0.9.7/chartist.min.css'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+    <script src="js/index.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3VO7U6N-dfn5WGKYAEt5STBubmfNGi5w&callback=initMap" async defer></script>    <!-- google map api    AIzaSyB3VO7U6N-dfn5WGKYAEt5STBubmfNGi5w    -->
+
+    <script type="text/javascript" src="js/yb3.js"></script>
+    <script type="text/javascript" src="https://storage.googleapis.com/ie-2018-217501.appspot.com/bower_components/chartist/dist/chartist.min.js"></script><!-- cloud -->
+    <script type="text/javascript" src="https://storage.googleapis.com/ie-2018-217501.appspot.com/bower_components/chart.js/dist/Chart.min.js"></script><!-- cloud -->
+    <script type="text/javascript" src="https://storage.googleapis.com/ie-2018-217501.appspot.com/bower_components/chart.js/dist/Chart.bundle.min.js"></script><!-- cloud -->
+    <link rel="stylesheet" href="https://storage.googleapis.com/ie-2018-217501.appspot.com/bower_components/chartist/dist/chartist.min.css"><!-- cloud -->
+    <!-- -------------------codes for back to top button------------------------------- -->
+    <section id="content">
+        <a href="#" class="back-to-top"><img src="../images/top.png" alt="image" height="30px" width="30px" /></a>
+    </section>
+
+    <script>
+        jQuery(document).ready(function () {
+            var offset = 450;
+            var duration = 500;
+            jQuery(window).scroll(function () {
+                if (jQuery(this).scrollTop() > offset) {
+                    jQuery('.back-to-top').fadeIn(duration);
+                } else {
+                    jQuery('.back-to-top').fadeOut(duration);
+                }
+            });
+
+            jQuery('.back-to-top').click(function (event) {
+                event.preventDefault();
+                jQuery('html, body').animate({ scrollTop: 0 }, duration);
+                return false;
+            })
+        });
+    </script>
+</body>
+
+</html>
