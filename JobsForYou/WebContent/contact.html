@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<!-- codes for website icon to the title of the page -->
+<link rel="icon" 
+  type="images/jpg" 
+  href="Images/t-logo.jpg">
+	<title>Jobs4U</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+	<link href="css/body.css" media="screen" rel="stylesheet" type="text/css" />
+	
+	<!-- for contact form -->	
+	<link rel="stylesheet" type="text/css" media="all" href="css/style.css">
+    <link rel="stylesheet" type="text/css" media="all" href="css/responsive.css">	
+    <script language="JavaScript" src="JS/gen_validatorv31.js" type="text/javascript"></script>
+ 
+</head>
+<body>
+	
+	<div class="main_home">
+		<div class="left_menu">
+			<div class="logo"> <a href="index.html"><img  src="Images/logo.gif"  alt="Image"  height="130" width="80"></a> </div>
+			
+			<ul id="nav" class="dropdown dropdown-vertical">
+				 <li ><a href="graduatejobs.html" >Graduate Jobs</a>  
+				 </li>
+		 
+				 <li><a href="Internship.html" >Internships</a>
+				</li>
+		 
+				 <li><a href="summer.html">Summer Jobs</a>
+				</li>
+				 <li><a href="parttime0.html">Part-Time Jobs</a>
+				   
+				 </li>
+				 <li><a href="forum.jsp" >Forum</a></li>
+				 <li><a href="AC.html" >About Us</a></li>
+				 <li><a href="register.html" >Register</a></li>
+				 <li><a href="#" >Contact</a></li>
+				 <li><a href="help.html" >Help</a></li>
+			</ul><!-- -----------------------------------/menu------------------------------------------ -->
+			
+			<div class="link2"><a href="https://twitter.com/" target="_blank"><p>Twitter</p></a></div>
+		<div class="link"><a href="https://www.facebook.com/" target="_blank"><p>Facebook</p></a></div>
+			
+		</div><!-- /left_menu -->
+		
+		<div class="content2">
+		
+			<div class="header">
+				<div class="site_name"><p> Jobs4U</p></div>
+				
+				<div class="search">
+					<form method="get" action="http://www.google.com/custom" target="_top">
+					    <table cellpadding="0px" cellspacing="0px">
+					     	<tr>
+					      	<td style="border-style:solid none solid solid;border-color:#4B7B9F;border-width:1px;">
+					      	 <input type="text" name="sa" style="width:100px; border:0px solid; height:17px; padding:0px 3px; position:relative;">
+					     	 </td>
+					     	 <td style="border-style:solid;border-color:#4B7B9F;border-width:1px;">
+					       <input type="submit" value="" style="border-style: none; background: url('Images/searchbutton3.gif') no-repeat; width: 24px; height: 20px;">
+					    	  </td>
+					    	 </tr>
+					    </table>
+					</form> 
+				</div><!-- /search -->
+			</div><!-- /header -->
+				
+			<div class="con_gx">
+			
+				<div class="form">
+				<!-- Start code for the form-->
+				<section id="container">
+					
+					<h1>Contact Us</h1>
+					<form name="myemailform" id="hongkiat-form" method="post" action="form-to-email.php">
+						
+						<div id="wrapping" class="clearfix">
+							<section id="aligned">
+							<input type="text" name="name" id="name" placeholder="Your name" autocomplete="off" tabindex="1" class="txtinput">
+						
+							<input type="email" name="email" id="email" placeholder="Your e-mail address" autocomplete="off" tabindex="2" class="txtinput">
+						
+							<input type="url" name="website" id="website" placeholder="Website URL(optional)" autocomplete="off" tabindex="3" class="txtinput">
+						
+							<input type="tel" name="telephone" id="telephone" placeholder="Phone number?(optional)" tabindex="4" class="txtinput">
+						
+							<textarea name="message" id="message" placeholder="Enter a cool message..." tabindex="5" class="txtblock"></textarea>
+							</section>
+							
+							
+						</div>
+				
+				
+						<section id="buttons">
+							<input type="reset" name="reset" id="resetbtn" class="resetbtn" value="Reset">
+							<input type="submit" name="submit" id="submitbtn" class="submitbtn" tabindex="7" value="Submit this!">
+							<br style="clear:both;">
+						</section>
+					</form>
+				</section><!-- /container -->
+				
+				<script language="JavaScript">
+				var frmvalidator  = new Validator("myemailform");
+				frmvalidator.addValidation("name","req","Please provide your name"); 
+				frmvalidator.addValidation("email","req","Please provide your email"); 
+				frmvalidator.addValidation("email","email","Please enter a valid email address"); 
+				</script>
+			</div><!-- --------------/form------------------ -->
+			</div>
+			
+			</div><!-- /content -->
+		
+		<div class="home_footer">
+		<br>
+						<p>Jobs4U Group Project &copy; 2013 All Rights Reserved &nbsp;&nbsp; |&nbsp;&nbsp; Computer Science, Brunel University</p>
+		</div>
+	</div><!-- /main_home -->
+	
+</body>
+</html>
