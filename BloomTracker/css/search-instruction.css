@@ -1,0 +1,29 @@
+.talkbubble {
+    width: 150px;
+    height: 100px;
+    background: none;
+    position: relative;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    float:right;
+    box-shadow:2px white;
+    margin-top:0px;
+    border:2px solid white;
+}
+.talkbubble p {
+    color:white;
+    font-size:15px;
+}
+
+    .talkbubble:before {
+        content: "";
+        position: absolute;
+        right: 100%;
+        top: 26px;
+        width: 0;
+        height: 0;
+        border-top: 13px solid transparent;
+        border-right: 26px solid grey;
+        border-bottom: 13px solid transparent;
+    }
