@@ -1,0 +1,407 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>BloomTracker</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/full.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://storage.googleapis.com/lionsbyte-213206.appspot.com/bower_components/chartist/dist/chartist.min.css">
+
+    <script type="text/javascript" src="https://storage.googleapis.com/lionsbyte-213206.appspot.com/bower_components/chartist/dist/chartist.min.js"></script>
+    <script type="text/javascript" src="https://storage.googleapis.com/lionsbyte-213206.appspot.com/bower_components/chart.js/dist/Chart.min.js"></script>
+    <script type="text/javascript" src="https://storage.googleapis.com/lionsbyte-213206.appspot.com/bower_components/chart.js/dist/Chart.bundle.min.js"></script>
+    <script type="text/javascript" src="js/wax.js"></script>
+    
+    <!-- files for tab -->
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,700'>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- tooltip -->
+    <link rel="stylesheet" type="text/css" href="css/balloon.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet"><!-- font Jura-->
+    <!-- read db-->  
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        /* map stylesheet
+                 Always set the map height explicitly to define the size of the div
+        * element that contains the map. */
+        #map {
+            height: 0px;
+            width: 0px;
+            margin-left: 30px;
+            margin-right: 50px;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin-left: 0px;
+            padding: 0;
+        }
+        /* charset code */
+        .chartsContainer {
+            min-width: 250px;
+            max-width: 1200px;
+            min-height: 10px;
+            max-height: 600px;
+            margin-left: 30px;
+        }
+
+        .copyright {            
+            position: relative;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            margin-top: 2em;
+            padding-top: 2em;
+            margin-left: 15px;
+        }
+
+            .copyright p {
+                font-size: 15px;
+                letter-spacing: .5px;
+                text-transform: capitalize;
+                margin-left: 100px;
+                color: white;
+            }
+
+                .copyright p a {
+                    color: #5ad2d4;
+                    text-decoration: underline;
+                }
+
+                    .copyright p a:hover {
+                        color: #fff;
+                    }
+    </style>
+
+
+    <style type="text/css">
+
+        .mainpage {
+            margin-top: 50px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            background-attachment: fixed;
+            position: center;
+            height: auto;
+            width: auto;
+        }
+
+        .top {
+            position: absolute;
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0PX;
+            padding-right: 20px;
+            min-height: 700px;
+            /*height:auto;*/
+            height: auto;
+            width: 100%;
+            background-color: white;
+        }
+
+        .title {
+            position: absolute;
+            margin-top: -50px;
+            height: 50px;
+            width: 100%;
+            box-shadow: yellow 5px 5px inherit;
+            background-color: white;
+        }
+
+            .title p {
+                font-size: 30px;
+                color: black;
+                text-align: center;
+                text-shadow: 2px 2px 8px black;
+                
+            }
+
+        .footr {
+            position: fixed;
+            margin-bottom: 0px;
+            bottom: 0px;
+            background-color: #404040;
+            height: 80px;
+            width: 100%;
+        }
+
+        .month {
+            position:relative;
+            padding-left: 50px;
+            margin-top: 50px;
+            height: auto;
+            background-color: white;
+            margin-bottom: 100px;
+        }
+        
+        .button {
+            position:absolute;
+            padding-right: 20px;
+            margin-left: 0px;
+        }
+        .one {
+            width: 80%;
+            height: auto;
+            background: none;
+            float: left;
+            padding-bottom:50px;
+        }
+
+        .two {
+            padding:20px;
+            margin-left: 80%;
+            height: auto;
+            background: none;
+        }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th td {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .pie {
+            height: 500px;
+            width: 1000px;
+        }
+
+        .isDisabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+            .isDisabled > a {
+                color: currentColor;
+                display: inline-block; /* For IE11/ MS Edge bug */
+                pointer-events: none;
+                text-decoration: none;
+            }
+
+        hr.style14 {
+            border: 0;
+            height: 1px;
+            background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+            background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+            background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+            background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="../index.html" style="font-size:50px;">BloomTracker</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto fontnw" style="float:right;">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../index.html">
+                            Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#top5">Top 5 Site</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../wax/waxmoth.html">Wax Moth</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html">About Us</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Predictions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Other</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Content -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- edited section start -->
+    <div class="mainpage">
+        <!-- tag for main page div tag-->
+
+        <div class=" top">
+            <!-- div for holding data output -->
+
+            <div class="title">
+                <!-- div for header / title-->
+
+                <p> Wax Moth. </p>
+                <hr class="style14" />
+            </div><!-- // title section -->
+
+            <div class="month">
+                <div style="overflow-x:auto;" class="flowerSelec">
+                    <img src="../images/wax.png" alt="image" style="width:98%; height:300px;" />
+                </div><!-- div for table-->
+                <!-- onchange="storeSelction() -->
+
+                <div class="button">
+
+                    <div class="one">
+                        &nbsp;
+                        <p>Wax moths can be a terrible problem to bee hives if allowed to get out of hand and will destroy brood comb in a very short time if unchecked. There are some simple steps to prevent the damage, but first, it might be simpler to discuss the life cycle to understand where the problem comes from. A normal healthy hive will keep wax moth under control by ejecting the larvae, but weakened hives with small populations can be overcome by wax moth infestations destroying the brood comb, ultimately destroying the hive.</p>
+                        
+                        <p>There are two varieties of moth which take delight in dining on wax the ‘Greater’ and also the ‘Lesser’ Wax Moth the greater wax moth is a mottled grey in colour approx 1 ½ inches in length while the lesser is smaller and slimmer approx a ½ inch in length and white/silver. As all moths, they prefer night time to mate and lay eggs.</p>
+                        <p>Most wax moths are seen in early summer in our area, and we see them under the overhang of hive roofs, out of the daylight, when the hive is disturbed they take off quickly and disappear into the trees.</p>
+                        <p>Preferring to work in the dark the moths enter the hive through top entrances left unscreened and unguarded by the bees, perhaps a sudden cold snap making the bees cluster, and lay eggs in cracks unavailable to the bees. These hatch in due course and the grey larvae begin feeding on wax and hive debris, tunnelling just under the cell caps and feeding on the discarded cocoons left by the bees, leaving behind an extremely sticky white web, similar to spiders web but almost impossible to pull apart. So perhaps they are misnamed and should be called Cocoon moths?</p>
+                        <p>
+                            With a little care, the wax moth can be outwitted and the damage they do can be prevented.
+                            First, the practice of top entrances should be examined, provided they have screening then there will be no problem. Leaving a big hole in the inner cover, then a badly fitting roof is just asking for trouble. Or even worse those holes drilled in the top of boxes allowing the bees a second entrance are a real problem. Apart from pollen in the honey, a cold evening and the bees pull down and form a cluster leaving that entrance unguarded, easy pickings for the wax moth, as they will fly in cooler conditions than bees.
+                        </p>
+                        <p>They do say that prevention is better than cure. I have already given one way, using screening to prevent wax moth entering the hive top. The second point could be to use a trap to draw the moths away from the hive area. There are, to my knowledge, no commercial wax moth traps, but we use a country cure which works extremely well and I would recommend to all.</p>
+
+                        &nbsp;
+                    </div>
+
+                    <div class="two">
+                        <div style="overflow-x:auto;">
+                            <table class="fontnw" style="font-weight:bold; border:none">
+                                <tr>
+                                    <td>
+                                        <p class="fontnw" style="font-weight:bold" id="currentAddress"></p>
+                                        <p> Check if flower blooming site is vulnerable to wax moth. </p>
+
+                                        <p class="fontnw" style="font-weight:bold"> Select a flower blooming location</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:20%; border:none">
+                                        <select id="chooseLocation" onchange="initMap()" style="width:200px;">
+                                            <option selected disabled>Location</option>
+                                            <option value="90171">Cashmore</option>
+                                            <option value="90194">Dartmoor</option>
+                                            <option value="86375">Cranbourne </option>
+                                            <option value="86338">Olympic Park</option>
+                                            <option value="83083">Eddi Upper</option>
+                                            <option value="84145">Orbost</option>
+                                            <option value="90176">Mortlake</option>
+                                            <option value="83024">Mount Buller</option>
+                                            <option value="80128">Charlton</option>
+                                            <option value="76064">Walpeup</option>
+                                            <option value="79028">Longerenong</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border:">
+                                        <p class="fontnw" style="font-weight:bold" id="selectedLocation"></p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div><!-- // button div -->
+
+                <div id="map"></div>
+
+                <!---------------------------------------------------------------------------------------------------------------------------
+                    </div>
+                </section>-->
+            </div><!-- // month div -->
+
+        </div><!-- // top div-->
+    </div><!-- main -->
+    <div class="footr">
+        <div class="copyright">
+            <p>© 2018 BloomTracker. All Rights Reserved | Design by LionsByte Monash 2018 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Last updated on: 30/09/18</p>
+        </div>
+    </div>
+    <!-- links for tab -->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+    <script src="js/index.js"></script>
+    <!-- map
+    <script type="text/javascript" src="https://storage.googleapis.com/lionsbyte-213206.appspot.com/js/subjs/map.js"></script>-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3VO7U6N-dfn5WGKYAEt5STBubmfNGi5w&callback=initMap" async defer></script>
+
+    <script type="text/javascript" src="js/wax.js"></script>
+
+    <!-- -------------------codes for back to top button------------------------------- -->
+    <section id="content">
+        <a href="#" class="back-to-top"><img src="../images/top.png" alt="image" style="height:30px; width:30px" /></a>
+    </section>
+
+    <script>
+        jQuery(document).ready(function () {
+            var offset = 450;
+            var duration = 500;
+            jQuery(window).scroll(function () {
+                if (jQuery(this).scrollTop() > offset) {
+                    jQuery('.back-to-top').fadeIn(duration);
+                } else {
+                    jQuery('.back-to-top').fadeOut(duration);
+                }
+            });
+
+            jQuery('.back-to-top').click(function (event) {
+                event.preventDefault();
+                jQuery('html, body').animate({ scrollTop: 0 }, duration);
+                return false;
+            })
+        });
+    </script>
+</body>
+
+</html>
