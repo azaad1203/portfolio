@@ -1,1 +1,0 @@
-copy bower folder form yellobox folder to this directory.
