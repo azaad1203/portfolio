@@ -1,2 +1,2 @@
 # portfolio
-projects i have done!
+This repository contains all the projects i have done!
