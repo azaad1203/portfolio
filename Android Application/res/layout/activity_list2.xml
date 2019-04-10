@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+       
+	<TableLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/tableLayout1"
+	    android:layout_width="wrap_content"
+	    android:layout_height="fill_parent" >
+	    
+	     <TableRow
+	        android:id="@+id/tableRow1"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:padding="10dip" >
+	        
+	               	<ExpandableListView
+	                android:id="@+id/lvExp"
+	                android:layout_height="match_parent"
+	                android:layout_width="match_parent"/>
+	               	
+	               	     </TableRow>
+	       
+	  
+	         
+	    <TableRow
+	        android:id="@+id/tableRow3"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:padding="5dip" >	
+	               	
+	   <Button 
+	       android:id="@+id/bt2"
+	       android:layout_width="wrap_content"
+	       android:layout_height="wrap_content"
+	       android:onClick="showMap"
+	       android:text="@string/map_gym"
+	       android:textColor="#FF0000"
+	       android:textSize="30sp"
+	       android:background="@drawable/touch3"
+	       android:drawableBottom="@drawable/map_g"
+	       />
+	      </TableRow>
+	 
+	 
+	</TableLayout>

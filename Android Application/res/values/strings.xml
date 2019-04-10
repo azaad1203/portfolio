@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Task1</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_gym">Gymnasium</string>
+    <string name="button_pground">Playground</string>
+    <string name="button_data">Database</string>
+    <string name="title_activity_list">List of Playgrounds</string>
+    <string name="title_activity_list2">List of Gyms</string>
+    <string name="title_activity_gmap">Map view of Gym</string>
+    
+    <string name="b1">gym 1</string>
+    <string name="map_gym">View gyms in map</string>
+    <string name="map_pgr">View playgrounds in map</string>
+    <string name="title_activity_gmap2">Map view of playgrounds</string>
+    <string name="ufc">Uxbridge Football Club</string>
+
+</resources>
