@@ -1,0 +1,406 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<asp:image runat="server" Imageurl="~/Images/logo2.jpg" skinid="logo2" />
+
+
+  
+<asp:Calendar runat="server" SkinID="CalendarView" 
+  BackColor="White" BorderColor="#999999"
+  CellPadding="4" DayNameFormat="Shortest" Font-Size="1em"
+  ForeColor="Black" Height="220px" Width="250px">
+  
+  <SelectedDayStyle BackColor="#8C8EAA" Font-Bold="True" 
+  ForeColor="White" Font-Size="1em"/>
+  
+  <SelectorStyle BackColor="#8C8EAA" Font-Size="0.8em"/>
+  
+  <WeekendDayStyle BackColor="#F3F3F6" Font-Size="0.8em"/>
+  
+  <OtherMonthDayStyle ForeColor="#8C8EAA" Font-Size="0.9em"/>
+  
+  <TodayDayStyle BackColor="#D2D5DE" ForeColor="Black"
+  Font-Size="0.8em"/>
+  
+  <NextPrevStyle VerticalAlign="Bottom" Font-Bold="True" 
+  ForeColor="White" Font-Size="0.8em"/>
+  
+  <DayHeaderStyle Font-Bold="True" Font-Size="0.8em"
+  BackColor="#D2D5DE"/>
+  
+  <TitleStyle BackColor="#8C8EAA" BorderColor="Black" 
+  Font-Bold="True" ForeColor="White" Font-Size="0.9em"/>
+  
+  <DayStyle Font-Size="0.8em" />
+</asp:Calendar>
+
+
+<asp:TreeView SkinId="TreeView1"
+          RootNodeStyle-ImageUrl="~/Images/xp/computer.gif"
+          ParentNodeStyle-ImageUrl="~/Images/xp/folder.gif"
+          LeafNodeStyle-ImageUrl="~/Images/xp/ie.gif"
+          LineImagesFolder="~/Images/lines"
+          ShowLines="true"
+          runat="server"/>
+
+<asp:TreeView SkinId="Bookstore"
+      NodeStyle-Font-Names="Verdana" 
+      NodeStyle-Font-Size="10pt" 
+      NodeStyle-ForeColor="Black"
+      RootNodeStyle-Font-Bold="true"
+      ParentNodeStyle-Font-Italic="true"
+      ParentNodeStyle-Font-Underline="true"
+      NodeIndent="10"
+      runat="server"
+  />
+
+  <asp:TreeView SkinId="Simple"
+      Font-Names="Verdana" 
+      ForeColor="Black"
+      HoverNodeStyle-Font-Underline="true"
+      HoverNodeStyle-ForeColor="#dd5555"
+      SelectedNodeStyle-ForeColor="#dd5555"
+      SelectedNodeStyle-Font-UnderLine="true"
+      NoExpandImageUrl="images/bullets/square2.gif"
+      ShowExpandCollapse="true"
+      NodeIndent="10"
+      Font-Size="8pt"
+      runat="server"/>
+
+  <asp:TreeView SkinId="Simple2"
+      Font-Names="Tahoma" 
+      ForeColor="Black"
+      HoverNodeStyle-Font-Underline="true"
+      HoverNodeStyle-ForeColor="#5555dd"
+      SelectedNodeStyle-ForeColor="#5555dd"
+      SelectedNodeStyle-Font-UnderLine="true"
+      NoExpandImageUrl="images/bullets/square3.gif"
+      ShowExpandCollapse="true"
+      NodeIndent="20"
+      Font-Size="10pt"
+      runat="server"/>
+
+  <asp:TreeView SkinId="BulletedList"
+      ForeColor="Black"
+      Font-Names="Verdana" 
+      HoverNodeStyle-Font-Underline="true"
+      HoverNodeStyle-ForeColor="#5555dd"
+      SelectedNodeStyle-ForeColor="#5555dd"
+      SelectedNodeStyle-Font-UnderLine="true"
+      RootNodeStyle-ImageUrl="images/bullets/bullet3.gif" 
+      ParentNodeStyle-ImageUrl="images/bullets/bullet3.gif" 
+      LeafNodeStyle-ImageUrl="images/bullets/bullet4.gif" 
+      ShowExpandCollapse="false"
+      ExpandDepth="100"
+      NodeIndent="20"
+      Font-Size="8pt"
+      runat="server"/>
+
+  <asp:TreeView SkinId="BulletedList2"
+      ForeColor="Black"
+      Font-Names="Verdana" 
+      HoverNodeStyle-Font-Underline="true"
+      HoverNodeStyle-ForeColor="#5555dd"
+      SelectedNodeStyle-ForeColor="#5555dd"
+      SelectedNodeStyle-Font-UnderLine="true"
+      RootNodeStyle-ImageUrl="images/bullets/square5.gif" 
+      ParentNodeStyle-ImageUrl="images/bullets/square5.gif" 
+      LeafNodeStyle-ImageUrl="images/bullets/square4.gif" 
+      ShowExpandCollapse="false"
+      ExpandDepth="100"
+      NodeIndent="20"
+      Font-Size="8pt"
+      runat="server"/>
+
+  <asp:TreeView SkinId="BulletedList3"
+      ForeColor="Black"
+      Font-Names="Verdana" 
+      HoverNodeStyle-Font-Underline="true"
+      HoverNodeStyle-ForeColor="#5555dd"
+      SelectedNodeStyle-ForeColor="#5555dd"
+      SelectedNodeStyle-Font-UnderLine="true"
+      RootNodeStyle-ImageUrl="images/bullets/clover3.gif" 
+      ParentNodeStyle-ImageUrl="images/bullets/clover3.gif" 
+      LeafNodeStyle-ImageUrl="images/bullets/clover4.gif" 
+      NodeStyle-HorizontalPadding="5"
+      ShowExpandCollapse="false"
+      ExpandDepth="100"
+      NodeIndent="20"
+      Font-Size="8pt"
+      runat="server"/>
+
+  <asp:TreeView SkinId="BulletedList4"
+      ForeColor="Black"
+      Font-Names="Tahoma" 
+      HoverNodeStyle-Font-Underline="true"
+      HoverNodeStyle-ForeColor="#5555dd"
+      SelectedNodeStyle-ForeColor="#5555dd"
+      SelectedNodeStyle-Font-UnderLine="true"
+      RootNodeStyle-ImageUrl="images/bullets/bullet3.gif" 
+      ParentNodeStyle-ImageUrl="images/bullets/bullet3.gif" 
+      LeafNodeStyle-ImageUrl="images/bullets/bullet4.gif" 
+      ShowExpandCollapse="false"
+      ExpandDepth="100"
+      NodeIndent="20"
+      Font-Size="10pt"
+      runat="server"/>
+
+  <asp:TreeView SkinId="BulletedList5"
+      ForeColor="Black"
+      Font-Names="Tahoma" 
+      HoverNodeStyle-Font-Underline="true"
+      HoverNodeStyle-ForeColor="#5555dd"
+      SelectedNodeStyle-ForeColor="#5555dd"
+      SelectedNodeStyle-Font-UnderLine="true"
+      RootNodeStyle-ImageUrl="images/bullets/square5.gif" 
+      ParentNodeStyle-ImageUrl="images/bullets/square5.gif" 
+      LeafNodeStyle-ImageUrl="images/bullets/square4.gif" 
+      ShowExpandCollapse="false"
+      ExpandDepth="100"
+      NodeIndent="20"
+      Font-Size="10pt"
+      runat="server"/>
+
+  <asp:TreeView SkinId="BulletedList6"
+      ForeColor="Black"
+      Font-Names="Tahoma" 
+      HoverNodeStyle-Font-Underline="true"
+      HoverNodeStyle-ForeColor="#5555dd"
+      SelectedNodeStyle-ForeColor="#5555dd"
+      SelectedNodeStyle-Font-UnderLine="true"
+      RootNodeStyle-ImageUrl="images/bullets/clover.gif" 
+      ParentNodeStyle-ImageUrl="images/bullets/clover3.gif" 
+      LeafNodeStyle-ImageUrl="images/bullets/clover4.gif" 
+      NodeStyle-HorizontalPadding="5"
+      ShowExpandCollapse="false"
+      ExpandDepth="100"
+      NodeIndent="20"
+      Font-Size="10pt"
+      runat="server"/>
+
+  <asp:TreeView SkinId="Arrows"
+      ForeColor="Black"
+      Font-Names="Verdana" 
+      HoverNodeStyle-Font-Underline="true"
+      HoverNodeStyle-ForeColor="#5555dd"
+      SelectedNodeStyle-ForeColor="#5555dd"
+      SelectedNodeStyle-Font-UnderLine="true"
+      ExpandImageUrl="images/bullets/right.gif" 
+      CollapseImageUrl="images/bullets/down.gif" 
+      NoExpandImageUrl="images/bullets/right2.gif" 
+      NodeStyle-HorizontalPadding="5"
+      NodeIndent="20"
+      Font-Size="8pt"
+      runat="server"/>
+
+  <asp:TreeView SkinId="Arrows2"
+      ForeColor="Black"
+      Font-Names="Tahoma" 
+      HoverNodeStyle-Font-Underline="true"
+      HoverNodeStyle-ForeColor="#5555dd"
+      SelectedNodeStyle-ForeColor="#5555dd"
+      SelectedNodeStyle-Font-UnderLine="true"
+      ExpandImageUrl="images/bullets/right.gif" 
+      CollapseImageUrl="images/bullets/down.gif" 
+      NoExpandImageUrl="images/bullets/right2.gif" 
+      NodeStyle-HorizontalPadding="5"
+      NodeIndent="20"
+      Font-Size="10pt"
+      runat="server"/>
+
+  <asp:TreeView SkinId="Help"
+      NoExpandImageUrl="images/help/blank.gif" 
+      CollapseImageUrl="images/help/minus.gif" 
+      ExpandImageUrl="images/help/plus.gif" 
+      RootNodeStyle-ImageUrl="images/help/openbook.gif" 
+      ParentNodeStyle-ImageUrl="images/help/closedbook.gif" 
+      LeafNodeStyle-ImageUrl="images/help/topic.gif" 
+      NodeStyle-ForeColor="Black"
+      NodeStyle-Font-Names="Tahoma"
+      NodeStyle-Font-Size="8pt"
+      NodeStyle-HorizontalPadding="5"
+      HoverNodeStyle-ForeColor="Orange"
+      SelectedNodeStyle-Font-Bold="true"
+      runat="server"/>
+
+  <asp:TreeView SkinId="HelpLines"
+      ShowLines="true"
+      LineImagesFolder="themes/default/images/lines"
+      RootNodeStyle-ImageUrl="images/help/openbook.gif" 
+      ParentNodeStyle-ImageUrl="images/help/closedbook.gif" 
+      LeafNodeStyle-ImageUrl="images/help/topic.gif" 
+      NodeStyle-ForeColor="Black"
+      NodeStyle-Font-Names="Tahoma"
+      NodeStyle-Font-Size="8pt"
+      NodeStyle-HorizontalPadding="5"
+      HoverNodeStyle-ForeColor="Orange"
+      SelectedNodeStyle-Font-Bold="true"
+      runat="server"/>
+
+    <asp:TreeView SkinId="Explorer" 
+      RootNodeStyle-ImageUrl="images/explorer/folder.gif"
+      ParentNodeStyle-ImageUrl="images/explorer/folder.gif"
+      LeafNodeStyle-ImageUrl="images/explorer/ie.gif"
+      CollapseImageUrl="images/explorer/minus.gif"
+      ExpandImageUrl="images/explorer/plus.gif"
+      NoExpandImageUrl="images/explorer/blank.gif"
+      NodeStyle-Font-Names="Arial" 
+      NodeStyle-Font-Size="8pt" 
+      NodeStyle-ForeColor="DarkBlue"
+      NodeStyle-HorizontalPadding="5"
+      RootNodeStyle-Font-Bold="true"
+      SelectedNodeStyle-ForeColor="White"
+      SelectedNodeStyle-BackColor="DarkBlue"
+      HoverNodeStyle-Font-Underline="true"
+      runat="server"
+    />
+
+    <asp:TreeView SkinId="ExplorerLines" 
+      ShowLines="true"
+      LineImagesFolder="~/Images"
+      RootNodeStyle-ImageUrl="~/Images/folder.png"
+      ParentNodeStyle-ImageUrl="~/Images/folder.png"
+      LeafNodeStyle-ImageUrl="~/Images/ie.png"
+      NodeStyle-Font-Names="Arial" 
+      NodeStyle-Font-Size="8pt" 
+      NodeStyle-ForeColor="DarkBlue"
+      NodeStyle-HorizontalPadding="5"
+      RootNodeStyle-Font-Bold="true"
+      SelectedNodeStyle-ForeColor="White"
+      SelectedNodeStyle-BackColor="DarkBlue"
+      HoverNodeStyle-Font-Underline="true"
+      runat="server"
+    />
+
+    <asp:TreeView SkinId="TOC"
+      Font-Names="Verdana" 
+      ForeColor="Black"
+      HoverNodeStyle-Font-Underline="true"
+      HoverNodeStyle-ForeColor="#5555dd"
+      SelectedNodeStyle-ForeColor="#5555dd"
+      SelectedNodeStyle-Font-UnderLine="true"
+      ShowExpandCollapse="false"
+      ExpandDepth="3"
+      NodeIndent="10"
+      Font-Size="8pt"
+      runat="server">
+      <LevelStyles>
+          <asp:TreeNodeStyle ChildNodesPadding="5" Font-Bold Font-Size="10pt" ForeColor="DarkBlue" />
+          <asp:TreeNodeStyle ChildNodesPadding="5" Font-UnderLine Font-Size="10pt" />
+          <asp:TreeNodeStyle ChildNodesPadding="5" Font-UnderLine />
+       </LevelStyles>
+    </asp:TreeView>
+
+    <asp:TreeView SkinId="MSDN"
+      CollapseImageUrl="~/Images/folder.png" 
+      ExpandImageUrl="~/Images/folder.png" 
+      NoExpandImageUrl="~/Images/ie.png" 
+      NodeStyle-ForeColor="Black"
+      NodeStyle-Font-Names="Verdana"
+      NodeStyle-Font-Size="8pt"
+      NodeStyle-HorizontalPadding="5"
+      HoverNodeStyle-BackColor="#cccccc"
+      HoverNodeStyle-BorderColor="#888888"
+      HoverNodeStyle-BorderWidth="1"
+      HoverNodeStyle-BorderStyle="Solid"
+      SelectedNodeStyle-BackColor="White"
+      SelectedNodeStyle-BorderColor="#888888"
+      SelectedNodeStyle-BorderWidth="1"
+      SelectedNodeStyle-BorderStyle="Solid"
+      NodeIndent="10"
+      runat="server"/>
+
+  <asp:TreeView SkinId="News"
+      Font-Names="Arial" 
+      ForeColor="Black"
+      Font-Size="10pt"
+      RootNodeStyle-ImageUrl="images/news/server.gif" 
+      ParentNodeStyle-ImageUrl="images/news/group.gif" 
+      LeafNodeStyle-ImageUrl="images/news/group.gif" 
+      NodeStyle-HorizontalPadding="5"
+      HoverNodeStyle-Font-UnderLine="true"
+      SelectedNodeStyle-Font-UnderLine="true"
+      runat="server"
+  />
+
+  <asp:TreeView SkinId="Contacts"
+      Font-Names="Verdana" 
+      ForeColor="Black"
+      Font-Size="8pt"
+      ExpandImageUrl="images/contacts/group.gif" 
+      CollapseImageUrl="images/contacts/group.gif" 
+      NoExpandImageUrl="images/contacts/online.gif" 
+      ParentNodeStyle-ForeColor="#5555dd"
+      ParentNodeStyle-Font-Bold="true"
+      NodeStyle-HorizontalPadding="5"
+      SelectedNodeStyle-Font-UnderLine="true"
+      runat="server"
+  />
+
+  <asp:TreeView SkinId="Inbox"
+      Font-Names="Verdana" 
+      ForeColor="Black"
+      Font-Size="8pt"
+      RootNodeStyle-ImageUrl="images/outlook/inbox.gif" 
+      ParentNodeStyle-ImageUrl="images/outlook/folder.gif" 
+      LeafNodeStyle-ImageUrl="images/outlook/folder.gif" 
+      NodeStyle-HorizontalPadding="5"
+      HoverNodeStyle-Font-UnderLine="true"
+      SelectedNodeStyle-Font-UnderLine="true"
+      runat="server"
+  />
+
+  <asp:TreeView SkinId="InboxLines"
+      Font-Names="Verdana" 
+      ForeColor="Black"
+      Font-Size="8pt"
+      ShowLines="true"
+      LineImagesFolder="themes/default/images/lines"
+      RootNodeStyle-ImageUrl="~/Images/folder.png" 
+      ParentNodeStyle-ImageUrl="~/Images/folder.png" 
+      LeafNodeStyle-ImageUrl="~/Images/ie.png" 
+      NodeStyle-HorizontalPadding="5"
+      HoverNodeStyle-Font-UnderLine="true"
+      SelectedNodeStyle-Font-UnderLine="true"
+      runat="server"
+  />
+
+  <asp:TreeView SkinId="Events"
+      RootNodeStyle-ImageUrl="~/Images/folder.png"  
+      ParentNodeStyle-ImageUrl="~/Images/folder.png"   
+      LeafNodeStyle-ImageUrl="~/Images/ie.png" 
+      NodeStyle-HorizontalPadding="5"
+      HoverNodeStyle-ForeColor="Orange"
+      SelectedNodeStyle-Font-Bold="true"
+      SelectedNodeStyle-ForeColor="Orange"
+      Font-Names="Verdana" 
+      ForeColor="Black"
+      Font-Size="8pt"
+      runat="server"
+  />
+
+  <asp:TreeView SkinId="FAQ"
+      RootNodeStyle-ImageUrl="~/Images/folder.png"  
+      ParentNodeStyle-ImageUrl="~/Images/folder.png" 
+      LeafNodeStyle-ImageUrl="~/Images/ie.png" 
+      NodeStyle-HorizontalPadding="5"
+      HoverNodeStyle-ForeColor="Purple"
+      HoverNodeStyle-Font-UnderLine="true"
+      SelectedNodeStyle-Font-Bold="true"
+      Font-Names="Tahoma" 
+      ForeColor="DarkBlue"
+      Font-Size="8pt"
+      runat="server"
+  />

@@ -1,0 +1,140 @@
+﻿<%@ Master Language="C#" %>
+
+<html>
+  <head runat="server">
+
+    <title>Autism Advisory Service</title>
+      <link href="~/App_Themes/SkinFileOne/StyleSheet.css" rel="stylesheet" type="text/css" />
+
+  </head>
+
+  <body>
+
+  
+    <form id="form1" runat="server">
+
+        <div id="main" class="main">
+
+            <div id="header" class="header">
+                <asp:Image ID="Image2" AlternateText="banner" ImageUrl="./pix/banner.jpg" runat="server" ImageAlign="Left" />
+
+                <div id="header_logo" class="header_logo">
+                    <a href="Home.aspx">
+                    <asp:Image ID="Image1" AlternateText="logo" ImageUrl="./pix/logo.jpg" runat="server" ImageAlign="Left"/> 
+                        </a>
+                </div>                
+
+                <div id="header_title" class="header_title">
+                    
+                    <h1>Autism Advisory Service</h1>
+
+                    <p> Empowering childeren through autism and
+                         their families through support</p>
+                    <hr />
+                </div>
+                
+            </div><%-- -------------------------------------------/header-------------------------------------- --%>
+
+            <div id="content_section" class="content_section">
+
+                &nbsp;&nbsp;<asp:SiteMapPath ID="SiteMap_1" runat="server" >
+                  <PathSeparatorTemplate> 
+                     >> 
+                   </PathSeparatorTemplate>
+                </asp:SiteMapPath>
+                
+                <%-- -----------------------------this section contain menu, a pic and a calender-------------------------------------- --%>
+                    <div id="menu" class="menu">
+                        <br /><br />
+                        <table id="table1" runat="server">
+
+                        <tr>
+                            <td>
+                                <%--    -------------menu without using sitemap--------------------------------------------
+                       <asp:Menu ID="Menu1" runat="server" BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" ForeColor="#990000" StaticSubMenuIndent="15px" skinid="Menu">
+
+                            <Items>
+                              <asp:MenuItem NavigateUrl="Home.aspx" Text="Home" Value="Page_0" />
+
+                              <asp:MenuItem NavigateUrl="Registration.aspx" Text="Registration" Value="Page_1">
+                                    
+                               </asp:MenuItem>
+                               <asp:MenuItem NavigateUrl="About.aspx" Text="About Us" Value="Page_2">
+                                            <asp:MenuItem NavigateUrl="History.aspx" Text="Our History" Value="Page_3" />
+                                            <asp:MenuItem NavigateUrl="FAQ.aspx" Text="Frequently Asked Questions" Value="Page_4" />
+                               </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="SiteMap.aspx" Text="Site Map" Value="Page_5" />
+                                <asp:MenuItem NavigateUrl="Documentation.aspx" Text="Documentation" Value="Page_6" />
+
+                            </Items>
+
+
+                            <StaticSelectedStyle BackColor="#FFCC66" />
+                            <StaticMenuItemStyle HorizontalPadding="80px" VerticalPadding="10px" />
+                            <DynamicMenuStyle BackColor="#FFFBD6" />
+                            <DynamicSelectedStyle BackColor="#FFCC66" />
+                            <DynamicMenuItemStyle HorizontalPadding="80px" VerticalPadding="10px" />
+                            <DynamicHoverStyle BackColor="#990000" Font-Bold="False" ForeColor="White" />
+                            <StaticHoverStyle BackColor="#990000" Font-Bold="False" ForeColor="White" />
+                          </asp:Menu>
+                                   ------------------------------------------------------------------------------------  --%>
+                                <asp:SiteMapDataSource ID="SiteMapData_2" runat="server" />
+
+                                <asp:Menu StaticDisplayLevels="2" ID="Menu1" runat="server" DataSourceID="SiteMapData_2" BackColor="#FFFBD6" DynamicHorizontalOffset="2" 
+                                    Font-Names="Calibri" StaticSubMenuIndent="15px" ForeColor="#990000" >
+                                       <StaticMenuItemStyle CssClass="MenuStaItm" />
+                                       <DynamicHoverStyle CssClass="MenuDynHov" Font-Bold="False" />
+                                       <DynamicMenuItemStyle CssClass="MenuDynItm" />
+                                       <StaticHoverStyle CssClass="MenuStaHov" Font-Bold="False" />
+                                       <StaticSelectedStyle BackColor="#FFCC66" />
+                                </asp:Menu>
+
+                                
+                                </td>
+                            </tr>
+
+                            <br /><br />
+                            <tr>
+                                <td>
+                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Image ID="logo2" runat="server" SkinID="logo2" />
+                                </td>
+
+                            </tr>
+
+                            <br /><br />
+                            <tr>
+                                <td>
+                        <%-- calender view --%>
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Calendar ID="Calendar1" runat="server" SkinID="CalendarView"/>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </td>
+                                
+                            </tr>
+                    </table>
+                        <br /><br />
+                    </div>
+
+
+                <%-- ------------------------------------------This section contains page content---------------------------------------- --%>
+                    <div id="content" class="content">
+                        
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+
+                    </div>
+
+            </div><%-- -------------------------------------------/Content----------------------------------------- --%>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div id="footer" class="footer">
+
+                <p style="text-align:center;">  Autism Advisory Service &copy; 2016 All Rights Reserved &nbsp;&nbsp; |&nbsp;&nbsp; MIT, Monash University </p>
+                
+            </div>
+
+
+        </div><%-- -----------------------------------------------/main------------------------------------------------------- --%>     
+
+    </form>
+
+  </body>
+
+</html>
