@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  
+  <siteMapNode title="Sitemap" url="" >
+    
+        <siteMapNode title="Home" url="~/Week3/Home.aspx"/>
+        <siteMapNode title="Registration" url="~/Week3/Registration.aspx"/>
+        <siteMapNode title="About Us" url="~/Week3/About.aspx">
+          
+              <siteMapNode title="Our History" url="~/Week3/History.aspx"/>
+              <siteMapNode title="Frequently Asked Questions" url="~/Week3/FAQ.aspx"/>
+      
+        </siteMapNode>
+    
+        <siteMapNode title="Sitemap" url="~/Week3/SiteMap.aspx"/>
+        <siteMapNode title="Documentation" url="~/Week3/Documentation.aspx"/>
+            
+  </siteMapNode>
+  
+</siteMap>
