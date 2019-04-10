@@ -1,0 +1,24 @@
+This project was about developing software using Waterfall software development methodologies, in order to control a Finch Robot, which is a easily programmable robot. It will be connected to a battery and a raspberry PI to create self-contained mobile unit to control the robot remotely, as a result Finch will be able to partake in a game of football.
+
+Hardware and software used
+Hardware used
+Finch Robot,
+Raspberry PI,
+Battery,
+Wifi adapter,
+And Memory card
+Camera 
+Software used
+Putty
+Eclipse
+Smart Git
+
+Features of the software
+Language used: Java
+Xming Server: used to export UI from PI to Computer
+Capture image using Raspberry PI camera module
+Transforming colour image into greyscale image
+Applying Otsu Filter to separate foreground and background of the image
+Using Binary image to locate football
+
+
