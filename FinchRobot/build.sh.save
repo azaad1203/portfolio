@@ -1,0 +1,3 @@
+#!/bin/sh
+LIBS=/home/pi/dev/BBTechSoftwareForPi/FinchJava
+javac -classpath .:$LIBS/finch.jar FinchTest.java
